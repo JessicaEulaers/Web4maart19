@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.utils.timezone import localtime, now
+from django.utils import timezone
 import datetime
 # Create your views here.
-def index(request):
-        now = localtime(now);
-        brexit = datetime.datetime.time(2019,3,29)
-        return render(request, 'polls/index.html', {'movie_name': movieslist})
+
+def countdown(countdown):
+        nu = datetime.datetime.now().__add__(-1)
+        brexit = datetime.datetime.time(2019,3,29,23,0,0)
+        countdown = datetime.time(brexit-nu)
+        return countdown
